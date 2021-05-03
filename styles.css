@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.25;
+}
+
+dt {
+  font-weight: bold;
+}
+iframe {
+  width: 100%;
+  border: 1px solid black;
+  height: 100%;
+}
+
+.top-level {
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 0;
+
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.top-level h1:first-child {
+  margin-block-start: 0;
+}

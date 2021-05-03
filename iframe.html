@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <title>Storage Panel tests - iframe</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Storage Panel tests: embedded</h1>
+  <p>This can be embedded in an iframe.</p>
+  <h2>Actions</h2>
+  <dl>
+    <dt>Cookies</dt>
+    <dd><button id="cookie-create">Create cookie</dd>
+  </dl>
+<script>
+document.querySelector("#cookie-create").addEventListener("click", () => {
+  document.cookie = `${uuid()}=${Math.random()}`;
+}, false);
+
+function uuid() {
+  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
+</script>
+</body>
+</html>
