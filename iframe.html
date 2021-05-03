@@ -14,7 +14,7 @@
   </dl>
 <script>
 document.querySelector("#cookie-create").addEventListener("click", () => {
-  document.cookie = `${uuid()}=${Math.random()};samesite=none`;
+  document.cookie = `${uuid()}=${Math.random()};samesite=none;secure`;
 }, false);
 
 function uuid() {
