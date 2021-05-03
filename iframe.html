@@ -3,6 +3,7 @@
 <head>
   <title>Storage Panel tests - iframe</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Storage Panel tests: embedded</h1>
@@ -11,10 +12,16 @@
   <dl>
     <dt>Cookies</dt>
     <dd><button id="cookie-create">Create cookie</dd>
+    <dt>Local Storage</dt>
+    <dd><button id="local-create">Create LocalStorage entry</dd>
   </dl>
 <script>
 document.querySelector("#cookie-create").addEventListener("click", () => {
   document.cookie = `${uuid()}=${Math.random()};samesite=none;secure`;
+}, false);
+
+document.querySelector("#local-create").addEventListener("click", () => {
+  localStorage.setItem(uuid(), `${Math.random()}`);
 }, false);
 
 function uuid() {
